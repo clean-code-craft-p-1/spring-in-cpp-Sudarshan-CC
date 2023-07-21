@@ -7,6 +7,6 @@ namespace Statistics {
     double max;
     double min;
     };
-    vector<double> vecValues = {};
-    Stats ComputeStatistics(const std::vector<double>& vecValues );
+    template< typename T>
+    Stats ComputeStatistics(const std::vector<T>& vecValues );
 }
