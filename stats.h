@@ -7,6 +7,6 @@ namespace Statistics {
     double max;
     double min;
     };
-vector<double> vecValues = {};
+    vector<double> vecValues = {};
     Stats ComputeStatistics(const std::vector<double>& vecValues );
 }
