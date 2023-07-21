@@ -1,12 +1,15 @@
 #include "stats.h"
 
-Stats Statistics::ComputeStatistics(const std::vector<double>&vecValues ) {
+
+template< typename T>
+Stats Statistics::ComputeStatistics(const std::vector<T>&vecValues ) {
     //Implement statistics here
-    double sum = 0;
-    for(int i = 0;i< vecValues.size();i++){
-        double sum = sum + vecValues.at[i];
-    }
-    Stats.average = sum/(vecValues.size());
-    Stats.Min = vecValues.[0];
-    Stats.Max = vecValues.[vecValues.size()];
+   double sum = 0.0;
+	Stats stat;
+	for(const T &i vecValues) {
+		 sum += (double)i;
+	}
+	stat.average = sum / (vecValues.size());
+	stat.min = min_element(vecValues.begin(),vecValues.end());
+	stat.max = max_element(vecValues.begin(), vecValues.end());
 }
