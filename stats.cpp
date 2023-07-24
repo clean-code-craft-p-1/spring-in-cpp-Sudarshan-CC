@@ -1,15 +1,20 @@
+#include "pch.h"
 #include "stats.h"
+#include <numeric>
+
+using namespace Statistics;
 
 
-template< typename T>
-Stats Statistics::ComputeStatistics(const std::vector<T>&vecValues ) {
-    //Implement statistics here
-   double sum = 0.0;
+Stats Statistics::ComputeStatistics(const std::vector<double>&vecValues) {
+	//Implement statistics here
+
 	Stats stat;
-	for(const T &i vecValues) {
-		 sum += (double)i;
-	}
-	stat.average = sum / (vecValues.size());
-	stat.min = min_element(vecValues.begin(),vecValues.end());
-	stat.max = max_element(vecValues.begin(), vecValues.end());
+	double sum = accumulate(vecValues.begin(), vecValues.end(), 0.0);
+	stat.average = (sum / vecValues.size());
+
+	stat.max = *max_element(vecValues.begin(), vecValues.end());
+	stat.min = *min_element(vecValues.begin(), vecValues.end());
+
+	return stat;
+		
 }
