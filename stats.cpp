@@ -1,6 +1,7 @@
 #include "stats.h"
 #include <numeric>
 #include <limits>
+#include <algorithm>
 using namespace Statistics;
 #define Assignment_NAN (std::numeric_limits<double>::quiet_NaN())
 
