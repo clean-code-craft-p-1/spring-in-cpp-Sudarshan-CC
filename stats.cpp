@@ -13,8 +13,8 @@ Stats Statistics::ComputeStatistics(const std::vector<double>&vecValues) {
 		double sum = accumulate(vecValues.begin(), vecValues.end(), 0.0);
 		stat.average = (sum / vecValues.size());
 
-		stat.max = *max_element(vecValues.begin(), vecValues.end());
-		stat.min = *min_element(vecValues.begin(), vecValues.end());
+		stat.max = *(std::max_element(vecValues.begin(), vecValues.end()));
+		stat.min = *(std::min_element(vecValues.begin(), vecValues.end()));
 	}
 	else {
 		stat.average = Assignment_NAN;
